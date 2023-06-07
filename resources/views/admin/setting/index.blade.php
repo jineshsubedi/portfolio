@@ -18,7 +18,7 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
         <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
             <div class="card-header">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Setting</h5>
                 <div class="card-tools">
                     <a href="{{ route('admin.setting.create') }}" class="btn btn-sm btn-primary"> Add Setting</a>
                 </div>
@@ -39,11 +39,25 @@
                         @forelse ($settings as $setting)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $loop->name }}</td>
-                                <td>{{ $loop->email }}</td>
-                                <td>{{ $loop->logo }}</td>
-                                <td>{{ $loop->meta_title }}</td>
-                                <td></td>
+                                <td>{{ $setting->name }}</td>
+                                <td>{{ $setting->email }}</td>
+                                <td>
+                                    @if ($setting->logo)
+                                        <img src="{{ $setting->logo }}" alt="" style="width:100px;">
+                                    @endif
+                                </td>
+                                <td>{{ $setting->meta_title }}</td>
+                                <td>
+                                    <form action="{{ route('admin.setting.destroy', $setting->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a href="{{ route('admin.setting.edit', $setting->id) }}"
+                                            class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                                        <button type="submit" class="btn btn-sm btn-outline-danger"
+                                            onclick="return confirm('Are You Sure?')"><i
+                                                class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
                             </tr>
                         @empty
                             <tr>
