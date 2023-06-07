@@ -71,5 +71,8 @@
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>
+        <x-logout-component >
+            <i class="fas fa-sign-out-alt"></i>
+        </x-logout-component>
     </ul>
 </nav>

@@ -78,6 +78,12 @@
                         </p>
                     </a>
                 </li>
+                <x-logout-component >
+                    <i class="nav-icon fas fa-sign-out-alt"></i>
+                    <p>
+                        Logout
+                    </p>
+                </x-logout-component>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
