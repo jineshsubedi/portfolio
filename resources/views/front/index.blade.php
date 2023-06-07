@@ -1,5 +1,15 @@
 @extends('layouts.front.app')
+@section('style')
+    <style>
+        .animated-item {
+            font-size: 24px;
+        }
 
+        .animated span {
+            font-size: 30px;
+        }
+    </style>
+@endsection
 @section('content')
     <!-- ABOUT -->
     <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
@@ -13,9 +23,8 @@
                         <h1 class="animated animated-text">
                             <span class="mr-2">Hey folks, I'm</span>
                             <div class="animated-info">
-                                <span class="animated-item">Marvel Sann</span>
-                                <span class="animated-item">Web Designer</span>
-                                <span class="animated-item">UI Specialist</span>
+                                <span class="animated-item">{{ config('app.settings.name') }}</span>
+                                <span class="animated-item">Back End Developer</span>
                             </div>
                         </h1>
 

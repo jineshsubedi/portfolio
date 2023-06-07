@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="{{ env('APP_URL') }}"><i class='uil uil-user'></i> {{ env('APP_NAME') }}</a>
+        <a class="navbar-brand" href="{{ url('/') }}"><i class='uil uil-user'></i>
+            {{ config('app.settings.name') }}</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
