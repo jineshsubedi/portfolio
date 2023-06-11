@@ -46,7 +46,23 @@ class AdminMenu extends Component
                         'links' => request()->is('admin/profile*')
                     ],
                 ]
-            ]
+            ],
+            [
+                'url' => "#",
+                'label' => 'PMS',
+                'icon' => 'fas fa-tachometer-alt',
+                'path' => ['portfolio'],
+                'links' => false,
+                'childrens' => [
+                    [
+                        'url' => route('admin.portfolio.index'),
+                        'label' => 'Home',
+                        'icon' => 'far fa-circle',
+                        'path' => [],
+                        'links' => request()->is('admin/portfolio*')
+                    ],
+                ]
+            ],
         ];
     }
 
